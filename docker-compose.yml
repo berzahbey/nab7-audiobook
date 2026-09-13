@@ -1,11 +1,11 @@
 services:
   nab7-audio-pipeline:
-    build: .
+    image: python:3.11-slim
     container_name: nab7-audio-pipeline
     restart: unless-stopped
     working_dir: /app
     volumes:
-      - .:/app
+      - /DATA/AppData/nab7-audiobook:/app
     ports:
       - "8002:8000"
     environment:
