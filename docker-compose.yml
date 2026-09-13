@@ -1,6 +1,6 @@
 services:
   nab7-audio-pipeline:
-    build: .
+    image: ghcr.io/berzahbey/nab7-audiobook:latest
     container_name: nab7-audio-pipeline
     restart: unless-stopped
     ports:
