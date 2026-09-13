@@ -2,18 +2,11 @@ version: '3.8'
 
 services:
   audio-pipeline:
-    build: .
+    image: ghcr.io/berzahbey/nab7-audiobook:latest
     container_name: nab7-audio-pipeline
     volumes:
-      - ./books:/app/books
-      - ./audio:/app/audio
-      - ./app:/app/app
-      - ~/.cache/piper:/root/.cache/piper
+      - /DATA/AppData/nab7-audiobook/books:/app/books
+      - /DATA/AppData/nab7-audiobook/audio:/app/audio
     ports:
       - "8000:8000"
-    environment:
-      - TTS_VOICE=tr_TR-dfki-medium
-      - WORKERS=4
     restart: unless-stopped
-    command: uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
-
