@@ -1,0 +1,12 @@
+fastapi==0.115.0
+uvicorn==0.31.0
+python-multipart==0.0.12
+ebooklib==0.18
+pymupdf==1.24.10
+piper-tts==1.2.0
+pydub==0.25.1
+numpy==1.26.4
+scipy==1.14.1
+nltk==3.9.1
+beautifulsoup4==4.12.3
+requests==2.32.3
