@@ -3,13 +3,13 @@ services:
     image: ghcr.io/berzahbey/nab7-audiobook:latest
     container_name: nab7-audio-pipeline
     restart: unless-stopped
+    ports:
+      - "8002:8000"
     volumes:
       - /DATA/AppData/nab7-audiobook/audio:/app/audio
       - /DATA/AppData/nab7-audiobook/books:/app/books
       - /DATA/AppData/nab7-audiobook/abs-config:/app/abs-config
       - /DATA/AppData/nab7-audiobook/abs-metadata:/app/abs-metadata
-    ports:
-      - "8002:8000"
     environment:
       - PYTHONUNBUFFERED=1
       - PYTHONPATH=/app
