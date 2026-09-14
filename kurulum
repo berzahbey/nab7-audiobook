@@ -1,0 +1,10 @@
+docker run -d \
+  --name nab7-audio-pipeline \
+  --restart unless-stopped \
+  -p 8002:8000 \
+  -v /DATA/AppData/nab7-audiobook/audio:/app/audio \
+  -v /DATA/AppData/nab7-audiobook/books:/app/books \
+  -v /DATA/AppData/nab7-audiobook/abs-config:/app/abs-config \
+  -v /DATA/AppData/nab7-audiobook/abs-metadata:/app/abs-metadata \
+  -v /DATA/AppData/nab7-audiobook/cache:/root/.cache \
+  ghcr.io/berzahbey/nab7-audiobook:latest
